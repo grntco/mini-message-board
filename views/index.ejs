@@ -1,0 +1,12 @@
+<h1><%= title %></h1>
+<ul>
+  <% messages.forEach(message => { %>
+  <li>
+    <p class="message-text"><%= message.text %></p>
+    <div class="message-meta">
+      <p class="message-user"><%= message.user %></p>
+      <p class="message-date"><%= message.added %></p>
+    </div>
+  </li>
+  <% }); %>
+</ul>
