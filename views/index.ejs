@@ -1,12 +1,14 @@
-<h1><%= title %></h1>
-<ul>
+<%- include('header') %>
+<ul class="messages-list">
   <% messages.forEach(message => { %>
-  <li>
+  <li class="message-list-item">
     <p class="message-text"><%= message.text %></p>
     <div class="message-meta">
-      <p class="message-user"><%= message.user %></p>
+      <p class="message-user">- <%= message.user %></p>
       <p class="message-date"><%= message.added %></p>
     </div>
+    <button class="btn open-message-btn">Open</button>
   </li>
   <% }); %>
 </ul>
+<%- include('footer') %>
