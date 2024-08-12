@@ -1,3 +1,4 @@
+const dateFns = require("date-fns");
 const express = require("express");
 const app = express();
 const messagesRouter = express.Router();
@@ -13,32 +14,27 @@ const messages = [
   {
     text: "Hi there!",
     user: "Amando",
-    added: new Date(),
+    added: dateFns.format(new Date(), "PPp"),
   },
   {
     text: "Hello World!",
     user: "Charles",
-    added: new Date(),
+    added: dateFns.format(new Date(), "PPp"),
   },
   {
     text: "Wassup!",
     user: "Susan",
-    added: new Date(),
+    added: dateFns.format(new Date(), "PPp"),
   },
   {
     text: "Howdy",
     user: "Jameson",
-    added: new Date(),
+    added: dateFns.format(new Date(), "PPp"),
   },
   {
     text: "What's up everyone!",
     user: "Alfie",
-    added: new Date(),
-  },
-  {
-    text: "What's up everyone!",
-    user: "Alfie",
-    added: new Date(),
+    added: dateFns.format(new Date(), "PPp"),
   },
 ];
 
@@ -53,8 +49,17 @@ app.get("/new", (req, res) => {
 app.post("/new", (req, res) => {
   const text = req.body.messageText;
   const user = req.body.messageUser;
-  messages.push({ text: text, user: user, added: new Date() });
+  messages.push({
+    text: text,
+    user: user,
+    added: dateFns.format(new Date(), "PPp"),
+  });
   res.redirect("/");
+});
+
+app.get("/message/:messageIndex", (req, res) => {
+  const message = messages[req.params.messageIndex];
+  res.render("message", { title: "Selected Message", message: message });
 });
 
 const PORT = 8080;

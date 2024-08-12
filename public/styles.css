@@ -59,7 +59,7 @@ footer {
   /* overflow-y: scroll; */
 }
 
-.message-list-item {
+.message-item {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
