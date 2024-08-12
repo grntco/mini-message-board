@@ -42,11 +42,11 @@ app.get("/", (req, res) => {
   res.render("index", { title: "Recent Messages", messages: messages });
 });
 
-app.get("/new", (req, res) => {
+messagesRouter.get("/", (req, res) => {
   res.render("form", { title: "New Message" });
 });
 
-app.post("/new", (req, res) => {
+messagesRouter.post("/", (req, res) => {
   const text = req.body.messageText;
   const user = req.body.messageUser;
   messages.push({
@@ -56,6 +56,8 @@ app.post("/new", (req, res) => {
   });
   res.redirect("/");
 });
+
+app.use("/new", messagesRouter);
 
 app.get("/message/:messageIndex", (req, res) => {
   const message = messages[req.params.messageIndex];
