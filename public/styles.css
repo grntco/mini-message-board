@@ -49,14 +49,10 @@ footer {
 }
 
 .messages-list {
-  /* background-color: #0f172a; */
-  /* padding: 2rem; */
-  /* height: ; */
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  /* overflow-y: scroll; */
 }
 
 .message-item {
@@ -66,10 +62,6 @@ footer {
   background-color: #0f172a;
   padding: 1rem;
   border-radius: 4px;
-}
-
-.message-list-item:hover {
-  /* background-color: #334155; */
 }
 
 .message-meta {
