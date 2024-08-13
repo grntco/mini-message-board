@@ -4,6 +4,7 @@ const app = express();
 const messagesRouter = express.Router();
 const path = require("node:path");
 const assetsPath = path.join(__dirname, "public");
+const PORT = process.env.PORT || 8080;
 
 app.use(express.static(assetsPath));
 app.set("views", path.join(__dirname, "views"));
@@ -64,5 +65,4 @@ app.get("/message/:messageIndex", (req, res) => {
   res.render("message", { title: "Selected Message", message: message });
 });
 
-const PORT = 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
