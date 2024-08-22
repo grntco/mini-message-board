@@ -1,7 +1,7 @@
 <%- include('header') %>
-<form method="POST" action="/new">
-  <input type="text" name="messageUser" placeholder="Name" />
-  <input type="text" name="messageText" placeholder="Message" />
+<form action="/new" method="POST">
+  <input type="text" name="text" placeholder="Message" />
+  <input type="text" name="user" placeholder="Name" />
   <button type="submit" class="btn">Send</button>
 </form>
 <%- include('footer') %>

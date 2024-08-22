@@ -1,13 +1,13 @@
 <%- include('header') %>
 <ul class="messages-list">
-  <% messages.forEach((message, index) => { %>
+  <% messages.map(message => { %>
   <li class="message-item">
     <p class="message-text"><%= message.text %></p>
     <div class="message-meta">
-      <p class="message-user">- <%= message.user %></p>
+      <p class="message-user">- <%= message.user%></p>
       <p class="message-time"><%= message.time %></p>
     </div>
-    <a href="/message/<%= index %>" class="btn open-message-btn">Open</a>
+    <a href="/message/<%= message.id %>" class="btn open-message-btn">Open</a>
   </li>
   <% }); %>
 </ul>
